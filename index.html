@@ -2,28 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Red Square</title>
+  <title>Red to Blue Square</title>
   <style>
-    /* Remove default margin and make the page full size */
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      background: white; /* or any color */
       display: flex;
       justify-content: center;
       align-items: center;
+      background: white;
     }
 
-    /* The red square */
     .square {
       width: 100px;
       height: 100px;
       background-color: red;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <div class="square"></div>
+  <div class="square" onclick="this.style.backgroundColor = 'blue'"></div>
 </body>
+</html>
+
 </html>
