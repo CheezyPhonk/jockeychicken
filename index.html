@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Red to Blue Square</title>
+  <title>Toggle Color Square</title>
   <style>
     html, body {
       margin: 0;
@@ -19,10 +19,25 @@
       height: 100px;
       background-color: red;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
   </style>
 </head>
 <body>
-  <div class="square" onclick="this.style.backgroundColor = 'blue'"></div>
+  <div class="square" id="mySquare"></div>
+
+  <script>
+    const square = document.getElementById("mySquare");
+
+    square.addEventListener("click", function () {
+      const currentColor = window.getComputedStyle(square).backgroundColor;
+
+      if (currentColor === "rgb(255, 0, 0)") { // red
+        square.style.backgroundColor = "blue";
+      } else {
+        square.style.backgroundColor = "red";
+      }
+    });
+  </script>
 </body>
 </html>
